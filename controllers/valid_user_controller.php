@@ -3,7 +3,6 @@ include_once "models/valid_user_model.php";
 class LogueoSistema {
 
 
-  
   public function validarUsuario($lForm,$cForm){
 
     $modelo = new ValidUserModel();
@@ -24,5 +23,5 @@ class LogueoSistema {
 
     // }
   }
-  
+
 }
