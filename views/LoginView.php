@@ -6,6 +6,9 @@ if ( ! defined( 'WORK_DIR' ) ) {
   exit;  // Exit if accesses directly.
 }
 
+/**
+ * The View of the Login form.
+ */
 class LoginView {
 
   /**
@@ -19,6 +22,11 @@ class LoginView {
     $this->view_name = 'Login View | MPadron MVC';
   }
 
+  /**
+   * Renders the HTML code of the view.
+   *
+   * @param array|null $user The user to show the data when is autenthicated.
+   */
   public function render( ?array $user = null ): void {
     ?>
     <!DOCTYPE html>
@@ -40,7 +48,7 @@ class LoginView {
     <?php
   }
 
-  public function render_body( array $user = null ): void {
+  private function render_body( array $user = null ): void {
     ?>
     <h1>Welcome to the Login View</h1>
     <form action="." method="POST">

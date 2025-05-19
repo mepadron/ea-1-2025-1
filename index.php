@@ -13,4 +13,4 @@ $controller = new ValidUserController(
   new LoginView()
 );
 
-$controller->render();
+$controller->render_view();

@@ -30,24 +30,17 @@ class ValidUserController {
     $this->view  = $view;
   }
 
+  /**
+   * Gets the user credentials to validate with the model.
+   *
+   * @param string $user  The user to validate
+   * @param string $pass  The user password to validate
+   */
   private function validate_user( string $user, string $pass ): array | null {
-
-    $user = $this->model->validate_user( $user, $pass );
-
-    // print_r($user);
-
-    return $user;
-
-    // aquo debo valida si vien los valores, sino devolver
-
-    // if($modelo->loginBD==$lForm and $modelo->claveBD==$cForm ){
-    //   echo "Ustes esta permitido entrar al sistema";
-    // }else{
-    //   echo "NOOOOOO esta permitido entrar al sistema";
-    // }
+    return $this->model->validate_user( $user, $pass );
   }
 
-  public function render(): void {
+  public function render_view(): void {
     if ( isset( $_POST[ 'username' ] ) && isset( $_POST[ 'password' ] ) ) {
       $user = $this->validate_user(
         $_POST[ 'username' ],
